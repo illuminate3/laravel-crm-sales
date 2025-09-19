@@ -1,0 +1,293 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Sales Component Specific Styles */
+@layer components {
+    /* Sales Dashboard Cards */
+    .sales-card {
+        @apply box-shadow rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900;
+    }
+
+    .sales-card-header {
+        @apply flex items-center justify-between mb-4;
+    }
+
+    .sales-card-title {
+        @apply text-lg font-semibold text-gray-800 dark:text-white;
+    }
+
+    .sales-metric-card {
+        @apply sales-card;
+    }
+
+    .sales-metric-value {
+        @apply text-2xl font-bold text-gray-800 dark:text-white;
+    }
+
+    .sales-metric-label {
+        @apply text-sm text-gray-600 dark:text-gray-300;
+    }
+
+    .sales-metric-subtitle {
+        @apply text-xs text-gray-500;
+    }
+
+    /* Performance Indicators */
+    .performance-indicator {
+        @apply flex items-center gap-2;
+    }
+
+    .performance-bar {
+        @apply h-2 rounded-full bg-gray-200 dark:bg-gray-700;
+    }
+
+    .performance-bar-fill {
+        @apply h-2 rounded-full transition-all duration-300;
+    }
+
+    .performance-bar-fill.excellent {
+        @apply bg-green-500;
+    }
+
+    .performance-bar-fill.good {
+        @apply bg-blue-500;
+    }
+
+    .performance-bar-fill.average {
+        @apply bg-yellow-500;
+    }
+
+    .performance-bar-fill.poor {
+        @apply bg-red-500;
+    }
+
+    /* Leaderboard Styles */
+    .leaderboard-rank {
+        @apply flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold;
+    }
+
+    .leaderboard-rank.first {
+        @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+    }
+
+    .leaderboard-rank.second {
+        @apply bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200;
+    }
+
+    .leaderboard-rank.third {
+        @apply bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200;
+    }
+
+    .leaderboard-rank.other {
+        @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+    }
+
+    /* Target Status Badges */
+    .target-status-badge {
+        @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+    }
+
+    .target-status-badge.active {
+        @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+    }
+
+    .target-status-badge.completed {
+        @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+    }
+
+    .target-status-badge.paused {
+        @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+    }
+
+    .target-status-badge.cancelled {
+        @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+    }
+
+    /* Achievement Badges */
+    .achievement-badge {
+        @apply inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium;
+    }
+
+    .achievement-badge.gold {
+        @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+    }
+
+    .achievement-badge.silver {
+        @apply bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200;
+    }
+
+    .achievement-badge.bronze {
+        @apply bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200;
+    }
+
+    /* Quick Action Cards */
+    .quick-action-card {
+        @apply flex items-center gap-3 rounded-lg border border-gray-200 p-3 transition-colors hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800;
+    }
+
+    .quick-action-icon {
+        @apply rounded-full p-2;
+    }
+
+    .quick-action-icon.primary {
+        @apply bg-blue-100 dark:bg-blue-900;
+    }
+
+    .quick-action-icon.success {
+        @apply bg-green-100 dark:bg-green-900;
+    }
+
+    .quick-action-icon.warning {
+        @apply bg-yellow-100 dark:bg-yellow-900;
+    }
+
+    .quick-action-icon.info {
+        @apply bg-purple-100 dark:bg-purple-900;
+    }
+
+    /* Filter Bar */
+    .sales-filter-bar {
+        @apply sticky top-0 z-10 flex items-center gap-4 rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-gray-900;
+    }
+
+    .sales-filter-input {
+        @apply rounded border border-gray-300 px-3 py-1 text-sm dark:border-gray-600 dark:bg-gray-800 dark:text-white;
+    }
+
+    /* Sparkline Container */
+    .sparkline-container {
+        @apply h-8 w-16;
+    }
+
+    /* Progress Ring */
+    .progress-ring {
+        @apply relative inline-flex h-12 w-12 items-center justify-center;
+    }
+
+    .progress-ring-circle {
+        @apply absolute inset-0;
+    }
+
+    .progress-ring-text {
+        @apply text-xs font-medium text-gray-700 dark:text-gray-300;
+    }
+
+    /* Report Builder */
+    .report-builder-section {
+        @apply sales-card mb-4;
+    }
+
+    .report-builder-field {
+        @apply cursor-pointer rounded border border-gray-200 p-2 text-sm transition-colors hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800;
+    }
+
+    .report-builder-field.selected {
+        @apply border-blue-500 bg-blue-50 dark:bg-blue-900/20;
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 768px) {
+        .sales-card {
+            @apply p-3;
+        }
+
+        .sales-metric-value {
+            @apply text-xl;
+        }
+
+        .quick-action-card {
+            @apply flex-col text-center;
+        }
+
+        .leaderboard-rank {
+            @apply h-6 w-6 text-xs;
+        }
+    }
+
+    /* Dark Mode Specific Adjustments */
+    @media (prefers-color-scheme: dark) {
+        .sales-card {
+            @apply border-gray-700 bg-gray-800;
+        }
+
+        .performance-bar {
+            @apply bg-gray-600;
+        }
+    }
+
+    /* Animation Classes */
+    .fade-in {
+        @apply animate-fade-in;
+    }
+
+    .slide-up {
+        @apply animate-slide-up;
+    }
+
+    .pulse-slow {
+        @apply animate-pulse;
+        animation-duration: 2s;
+    }
+
+    /* Custom Animations */
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slide-up {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Brand Color Overrides */
+    .sales-primary {
+        @apply text-brandColor;
+    }
+
+    .sales-primary-bg {
+        @apply bg-brandColor;
+    }
+
+    .sales-primary-border {
+        @apply border-brandColor;
+    }
+
+    /* Icon Styles */
+    .sales-icon {
+        @apply text-xl;
+    }
+
+    .sales-icon.primary {
+        @apply text-blue-600 dark:text-blue-400;
+    }
+
+    .sales-icon.success {
+        @apply text-green-600 dark:text-green-400;
+    }
+
+    .sales-icon.warning {
+        @apply text-yellow-600 dark:text-yellow-400;
+    }
+
+    .sales-icon.danger {
+        @apply text-red-600 dark:text-red-400;
+    }
+
+    .sales-icon.info {
+        @apply text-purple-600 dark:text-purple-400;
+    }
+}

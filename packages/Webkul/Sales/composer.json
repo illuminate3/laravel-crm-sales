@@ -1,0 +1,23 @@
+{
+    "name": "webkul/sales",
+    "description": "Sales component for Krayin CRM with targets, performance tracking, and reporting",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^10.0",
+        "webkul/core": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webkul\\Sales\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webkul\\Sales\\Providers\\SalesServiceProvider"
+            ]
+        }
+    }
+}
